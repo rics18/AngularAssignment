@@ -1,0 +1,15 @@
+<div *ngIf="tweetDetails">
+  <h2 (click)="getTweetDetails()">Tweets synopsis</h2>
+
+  <div class="form-group"><button class="btn btn-primary btn-block" type="submit" (click)="logout()">Log Out</button></div>
+
+
+    <div *ngFor="let obj of tweetDetails" class="form-group" (click)="getDetails(obj.user.id)">
+    <div>Id : {{obj.user.id}}</div>
+    <div>Name : {{obj.user.name}}</div>
+    <div>Screen Name : {{obj.user.screen_name}}</div>
+    <div>Followers Count : {{obj.user.followers_count}}</div>
+    <div>Created at : {{obj.user.created_at}}</div>
+    </div>
+
+</div>
