@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import {User} from './user';
 import {Router} from '@angular/router';
 import {TweetDetails} from './tweetDetails';
+import {UrlConstants} from './urlConstants';
 
 @Injectable()
 export class LoginService {
@@ -16,7 +17,7 @@ export class LoginService {
 
   public login(username: string, password: string): Observable<any> {
 
-    const url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyD8W0pWlju6wOPr3ih_aio2gNiVKHd9F8g';
+    const url = UrlConstants.GOOGLE_API;
     const loginObject = new User();
     loginObject.email = username;
     loginObject.password = password;
@@ -25,7 +26,12 @@ export class LoginService {
   }
 
   public getTweeterDetails(idToken: string): Observable<any> {
-    const url = 'https://angular-sample-twitter.firebaseio.com/tweets.json?auth=' + idToken;
+    const url = UrlConstants.TWEETER_API + idToken;
     return this.http.get(url);
+  }
+
+  public logout() {
+    console.log('logout');
+    this.router.navigate(['/login']);
   }
 }

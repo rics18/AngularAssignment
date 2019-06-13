@@ -1,15 +1,30 @@
-<div *ngIf="tweetDetails">
-  <h2 (click)="getTweetDetails()">Tweets synopsis</h2>
-
-  <div class="form-group"><button class="btn btn-primary btn-block" type="submit" (click)="logout()">Log Out</button></div>
-
-
-    <div *ngFor="let obj of tweetDetails" class="form-group" (click)="getDetails(obj.user.id)">
-    <div>Id : {{obj.user.id}}</div>
-    <div>Name : {{obj.user.name}}</div>
-    <div>Screen Name : {{obj.user.screen_name}}</div>
-    <div>Followers Count : {{obj.user.followers_count}}</div>
-    <div>Created at : {{obj.user.created_at}}</div>
+<div>
+  <nav class="container-fluid navbar navbar-nav bg-light">
+    <div class="container-fluid border-bottom">
+      <div class="navbar-header">
+<!--        <a class="navbar-brand" href="#">Tweets synopsis</a>-->
+        <a href="#" class="fa fa-twitter" style="font-size:48px;color:skyblue"></a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in" (click)="logout()"></span> Log out</a></li>
+      </ul>
     </div>
+  </nav>
 
+  <div class="container bg-info">
+    <div *ngIf="tweetDetails">
+      <div *ngFor="let obj of tweetDetails" class="form-group">
+        <div class="card">
+          <div class="card-body">
+            <div>ID : {{obj.user.id}}</div>
+            <div>Name : {{obj.user.name}}</div>
+            <div>Screen Name : {{obj.user.screen_name}}</div>
+            <div>Followers Count : {{obj.user.followers_count}}</div>
+            <div>Created at : {{obj.user.created_at}}</div>
+            <div><button class="btn btn-success" (click)="getDetails(obj.user.id)">View full Details</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

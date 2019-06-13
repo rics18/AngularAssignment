@@ -1,9 +1,35 @@
-<div class="login-clean">
-  <div method="post">
-    <h2 class="sr-only">Login Form</h2>
-    <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
-    <div class="form-group"><input class="form-control" type="email" [(ngModel)]="email" placeholder="Email"></div>
-    <div class="form-group"><input class="form-control" type="password" [(ngModel)]="password" placeholder="Password"></div>
-    <div class="form-group"><button class="btn btn-primary btn-block" type="submit" (click)="login()">Log In</button></div></div>
+<nav class="container-fluid navbar navbar-nav bg-light">
+  <div class="container-fluid border-bottom">
+    <div class="navbar-header">
+<!--      <a class="navbar-brand" href="#">Tweeter synopsis</a>-->
+      <a href="#" class="fa fa-twitter" style="font-size:48px;color:skyblue"></a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-img-top">
+        <form class="form-signin">
+          <div class="card-header bg-info text-white">
+            <h5 class="card-title text-center">Login Form</h5>
+          </div>
+          <div class="card-body">
+              <div class="form-label-group col-sm-12">
+                <label for="inputEmail">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email" name="email" placeholder="Email address" required autofocus>
+              </div>
+              <div class="form-label-group col-sm-12">
+                <label for="inputPassword">Password</label>
+                <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password" placeholder="Password" required>
+              </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-primary  text-uppercase" type="submit" (click)="login()">Sign in</button>
+            <span class="text-danger font-weight-bold float-right">{{errorMessage}}</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-

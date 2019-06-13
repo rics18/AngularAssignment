@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../login.service';
 import {TweetDetails} from '../tweetDetails';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tweets-details',
@@ -9,7 +10,8 @@ import {TweetDetails} from '../tweetDetails';
 })
 export class TweetsDetailsComponent implements OnInit {
   tweetDetails: TweetDetails;
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService,
+              private router: Router) { }
 
   ngOnInit() {
     const tweetId = this.loginService.tweetId;
@@ -18,6 +20,15 @@ export class TweetsDetailsComponent implements OnInit {
     this.tweetDetails = tweetDetails.find(x => x.user.id === tweetId);
     console.log(tweetDetails.find(x => x.user.id === tweetId));
     console.log(this.tweetDetails);
+  }
+
+  public goBack() {
+    console.log('go back');
+    this.router.navigate(['/back']);
+  }
+
+  public logout() {
+    this.loginService.logout();
   }
 
 }

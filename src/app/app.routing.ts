@@ -19,10 +19,14 @@ const appRoutes: Routes = [
         path: 'tweeter/:id',
         component: TweetComponent
     },
-  {
-    path: 'tweeterdetails',
-    component: TweetsDetailsComponent
-  }
+    {
+      path: 'tweeterdetails',
+      component: TweetsDetailsComponent
+    },
+    {
+      path: 'back',
+      component: TweetComponent
+    }
 ];
 
 @NgModule({

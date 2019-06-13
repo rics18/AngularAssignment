@@ -43,9 +43,8 @@ export class TweetComponent implements OnInit {
     this.router.navigate(['/tweeterdetails']);
   }
 
-  logout() {
-    console.log('logout');
-    this.router.navigate(['/login']);
+  public logout() {
+    this.loginService.logout();
   }
 
 }
