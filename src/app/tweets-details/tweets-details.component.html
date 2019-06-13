@@ -13,39 +13,43 @@
   <table class="table table-hover col-6">
     <tbody>
     <tr>
-      <td>ID</td>
+      <td style="font-weight:bold">Profile Pic</td>
+      <td><img src="{{tweetDetails.user.profile_image_url}}"></td>
+    </tr>
+    <tr>
+      <td style="font-weight:bold">ID</td>
       <td>{{tweetDetails.user.id}}</td>
     </tr>
     <tr>
-      <td>Name</td>
+      <td style="font-weight:bold">Name</td>
       <td>{{tweetDetails.user.name}}</td>
     </tr>
     <tr>
-      <td>Screen Name</td>
+      <td style="font-weight:bold">Screen Name</td>
       <td>{{tweetDetails.user.screen_name}}</td>
     </tr>
     <tr>
-      <td>Created at</td>
+      <td style="font-weight:bold">Created at</td>
       <td>{{tweetDetails.user.created_at}}</td>
     </tr>
     <tr>
-      <td>Description</td>
+      <td style="font-weight:bold">Description</td>
       <td>{{tweetDetails.user.description}}</td>
     </tr>
     <tr>
-      <td>Favourites count</td>
+      <td style="font-weight:bold">Favourites count</td>
       <td>{{tweetDetails.user.favourites_count}}</td>
     </tr>
     <tr>
-      <td>Followers count</td>
+      <td style="font-weight:bold">Followers count</td>
       <td>{{tweetDetails.user.followers_count}}</td>
     </tr>
     <tr>
-      <td>Friends count</td>
+      <td style="font-weight:bold">Friends count</td>
       <td>{{tweetDetails.user.friends_count}}</td>
     </tr>
     <tr>
-      <td>Statuses count</td>
+      <td style="font-weight:bold">Statuses count</td>
       <td>{{tweetDetails.user.statuses_count}}</td>
     </tr>
     </tbody>
